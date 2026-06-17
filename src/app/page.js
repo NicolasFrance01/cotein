@@ -30,14 +30,14 @@ export default function Home() {
   return (
     <main className="bg-[#050505] text-[#f4f4f4] relative">
       
-      {/* BACKGROUND PARTICLES FOR HERO & NUMBERS */}
+      {/* BACKGROUND PARTICLES FOR HERO */}
       <div className="absolute top-0 left-0 w-full h-[140vh] overflow-hidden opacity-50 z-0">
          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] z-10 pointer-events-none" />
          <ParticleBackground />
       </div>
 
-      {/* 1. HERO SECTION */}
-      <section id="soluciones" className="relative z-10 pt-48 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+      {/* 1. INICIO SECTION */}
+      <section id="inicio" className="relative z-10 pt-48 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <motion.div 
           className="md:w-full"
           initial="hidden"
@@ -57,10 +57,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. CARDS SECTION */}
-      <section id="vision" className="relative z-10 py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+      {/* 2. ACERCA DE NOSOTROS */}
+      <section id="nosotros" className="relative z-10 py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-center">
         <motion.div 
-          className="md:w-5/12 pt-12"
+          className="md:w-full pt-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -69,120 +69,94 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl lg:text-[54px] leading-[1.1] text-vista-serif mb-12">
             Socios estratégicos para tu crecimiento
           </h2>
-          <div className="border-l-2 border-[#FF6044] pl-6">
-            <p className="text-[14px] leading-relaxed text-white/70 max-w-sm mb-4">
+          <div className="border-l-2 border-[#FF6044] pl-6 max-w-2xl">
+            <p className="text-[14px] leading-relaxed text-white/70 mb-4">
               COTEIN LTDA (Mat. 40271) nace del esfuerzo cooperativo de profesionales del sector informático y de telecomunicaciones. Nuestro objetivo es proveer soluciones integrales, eficientes y seguras.
             </p>
-            <p className="text-[14px] leading-relaxed text-white/70 max-w-sm">
+            <p className="text-[14px] leading-relaxed text-white/70">
               Al elegirnos, eliges calidad, compromiso y una visión enfocada al futuro.
             </p>
           </div>
         </motion.div>
+      </section>
 
+      {/* 3. SERVICIOS SECTION */}
+      <section id="servicios" className="relative z-10 py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <motion.div 
-          className="md:w-7/12 flex flex-col gap-6"
+          className="w-full flex flex-col md:flex-row gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
           {/* Card 1 */}
-          <motion.div variants={flipIn} className="vista-card rounded-xl p-10 md:mr-12 perspective-1000">
+          <motion.div variants={flipIn} className="vista-card rounded-xl p-10 flex-1 perspective-1000">
             <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center mb-6">
               <Network className="text-white/80" strokeWidth={1} />
             </div>
             <h3 className="text-2xl text-vista-serif mb-4">Instalación de<br/>redes</h3>
-            <p className="text-[13px] text-white/60 leading-relaxed max-w-sm">
+            <p className="text-[13px] text-white/60 leading-relaxed">
               Despliegue y configuración de infraestructura de red para asegurar conectividad de alta velocidad y estabilidad en todo momento.
             </p>
           </motion.div>
 
-          {/* Cards Group */}
-          <div className="flex flex-col sm:flex-row gap-6 md:ml-12">
-            {/* Card 2 */}
-            <motion.div variants={flipIn} className="vista-card rounded-xl p-10 flex-1 perspective-1000">
-              <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center mb-6">
-                <Cpu className="text-white/80" strokeWidth={1} />
-              </div>
-              <h3 className="text-2xl text-vista-serif mb-4">Mantenimiento<br/>preventivo</h3>
-              <p className="text-[13px] text-white/60 leading-relaxed">
-                Protege tus equipos antes de que fallen. Revisiones constantes y soporte proactivo para evitar cortes inesperados.
-              </p>
-            </motion.div>
-
-            {/* Card 3 */}
-            <motion.div variants={flipIn} className="vista-card rounded-xl p-10 flex-1 mt-6 sm:mt-0 perspective-1000">
-              <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center mb-6">
-                <Cloud className="text-white/80" strokeWidth={1} />
-              </div>
-              <h3 className="text-2xl text-vista-serif mb-4">Servicio técnico<br/>especializado</h3>
-              <p className="text-[13px] text-white/60 leading-relaxed">
-                Expertos listos para solucionar problemas complejos en servidores, estaciones de trabajo y sistemas de telecomunicación.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* 3. VELOCITY SECTION */}
-      <section className="relative z-10 py-32 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-        <motion.div 
-          className="md:w-1/2"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-[54px] leading-[1.1] text-vista-serif">
-            Calidad sin precedentes.<br/>Máxima fiabilidad.
-          </h2>
-        </motion.div>
-        
-        <motion.div 
-          className="md:w-1/2 flex flex-col items-start md:items-end"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          <div className="border-l-2 border-[#FF6044] pl-6 mb-8 max-w-md text-left">
-            <p className="text-[13px] leading-relaxed text-white/70">
-              Trabajamos codo a codo contigo para asegurarnos de que tu infraestructura tecnológica esté siempre a la vanguardia. Conectando y manteniendo el futuro de tu negocio con los más altos estándares de calidad.
+          {/* Card 2 */}
+          <motion.div variants={flipIn} className="vista-card rounded-xl p-10 flex-1 perspective-1000">
+            <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center mb-6">
+              <Cpu className="text-white/80" strokeWidth={1} />
+            </div>
+            <h3 className="text-2xl text-vista-serif mb-4">Mantenimiento<br/>preventivo</h3>
+            <p className="text-[13px] text-white/60 leading-relaxed">
+              Protege tus equipos antes de que fallen. Revisiones constantes y soporte proactivo para evitar cortes inesperados.
             </p>
-          </div>
+          </motion.div>
+
+          {/* Card 3 */}
+          <motion.div variants={flipIn} className="vista-card rounded-xl p-10 flex-1 perspective-1000">
+            <div className="w-12 h-12 border border-white/20 rounded flex items-center justify-center mb-6">
+              <Cloud className="text-white/80" strokeWidth={1} />
+            </div>
+            <h3 className="text-2xl text-vista-serif mb-4">Servicio técnico<br/>especializado</h3>
+            <p className="text-[13px] text-white/60 leading-relaxed">
+              Expertos listos para solucionar problemas complejos en servidores, estaciones de trabajo y sistemas de telecomunicación.
+            </p>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* 4. STATS SECTION */}
-      <section id="cifras" className="relative z-10 py-32 text-center border-t border-white/5">
-        <h3 className="text-2xl text-vista-serif mb-24">Orgullosos de nuestras cifras</h3>
-        
-        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-12 md:gap-24">
-          {[
-            { num: 15, label: "años de experiencia" },
-            { num: 100, label: "clientes satisfechos" },
-            { num: 2600, label: "proyectos completados" },
-            { num: 5, label: "certificaciones" },
-          ].map((stat, i) => (
-            <motion.div 
-              key={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="flex flex-col items-center"
-            >
-              <div className="text-6xl md:text-7xl lg:text-[90px] text-[#FF6044] font-light tracking-tighter mb-4 font-serif">
-                <AnimatedCounter value={stat.num} delay={i * 0.1} suffix="+" />
-              </div>
-              <p className="text-[11px] uppercase tracking-wider text-white/60">{stat.label}</p>
-            </motion.div>
-          ))}
+      {/* 4. VELOCITY SECTION (NOW HAS VISTA-GRADIENT-BG) */}
+      <section className="relative z-10 py-32 px-6 vista-gradient-bg border-y border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+          <motion.div 
+            className="md:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-[54px] leading-[1.1] text-vista-serif">
+              Calidad sin precedentes.<br/>Máxima fiabilidad.
+            </h2>
+          </motion.div>
+          
+          <motion.div 
+            className="md:w-1/2 flex flex-col items-start md:items-end"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="border-l-2 border-[#FF6044] pl-6 mb-8 max-w-md text-left">
+              <p className="text-[13px] leading-relaxed text-white/70">
+                Trabajamos codo a codo contigo para asegurarnos de que tu infraestructura tecnológica esté siempre a la vanguardia. Conectando y manteniendo el futuro de tu negocio con los más altos estándares de calidad.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 5. CTA / CONTACTO SECTION */}
-      <section id="contacto" className="relative z-10 py-40 vista-gradient-bg px-6 border-t border-white/5">
+      <section id="contacto" className="relative z-10 py-32 vista-gradient-bg px-6 border-b border-white/5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 justify-between">
           <div className="w-full md:w-5/12">
             <h2 className="text-4xl md:text-5xl lg:text-[54px] text-vista-serif mb-8">
@@ -198,14 +172,14 @@ export default function Home() {
                   <div className="text-[#FF6044] mt-1"><MapPin size={20} /></div>
                   <div>
                     <h5 className="font-medium text-[15px] mb-1">Ubicación</h5>
-                    <p className="text-white/60 text-[13px]">Buenos Aires, Argentina (Mat. 40271)</p>
+                    <p className="text-white/60 text-[13px]">Claudio Cuenca 1563 PA<br/>X5009 Córdoba, Provincia de Córdoba</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="text-[#FF6044] mt-1"><Phone size={20} /></div>
                   <div>
                     <h5 className="font-medium text-[15px] mb-1">Teléfono</h5>
-                    <p className="text-white/60 text-[13px]">+54 11 0000-0000</p>
+                    <p className="text-white/60 text-[13px]">0351 657-7646</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -219,7 +193,8 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="w-full md:w-7/12">
+          <div className="w-full md:w-7/12" id="socio">
+            <h3 className="text-2xl text-vista-serif mb-6">Contáctanos o Hazte Socio</h3>
             <form className="bg-[#181a18] p-10 border border-white/5 rounded-xl flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
@@ -233,7 +208,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-[12px] text-white/60 uppercase tracking-widest">Asunto</label>
-                <input type="text" className="bg-[#050505] border border-white/10 rounded-md py-3 px-4 text-[13px] text-white focus:outline-none focus:border-[#FF6044] transition-colors" placeholder="Asunto de tu mensaje" />
+                <input type="text" className="bg-[#050505] border border-white/10 rounded-md py-3 px-4 text-[13px] text-white focus:outline-none focus:border-[#FF6044] transition-colors" placeholder="Asunto de tu mensaje (ej: Consulta o Hazte Socio)" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-[12px] text-white/60 uppercase tracking-widest">Mensaje</label>
