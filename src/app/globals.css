@@ -1,57 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-sans), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-serif), "Playfair Display", "Lora", Georgia, serif;
   
-  --color-brand-dark: #000000;
-  --color-brand-gray: #1a1a1a;
-  --color-brand-blue: #0f172a;
-  --color-brand-neon: #3b82f6;
-  --color-brand-text: #f8fafc;
-  --color-brand-muted: #94a3b8;
-}
-
-:root {
-  background-color: #000000;
-  color: #f8fafc;
-  scroll-behavior: smooth;
+  --color-brand-dark: #050505;
+  --color-brand-gray: #181a18;
+  --color-brand-orange: #FF6044;
+  --color-brand-orange-hover: #ff4a2b;
+  --color-brand-text: #efffeb;
+  --color-brand-muted: #8d9299;
 }
 
 body {
+  background-color: var(--color-brand-dark);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Utilities for the Wix Template Clone */
-.bg-gradient-tech {
-  background: radial-gradient(circle at bottom, rgba(30, 58, 138, 0.4) 0%, #000000 60%);
+.text-vista-serif {
+  font-family: var(--font-serif);
+  color: #efffeb;
 }
 
-.text-gradient-tech {
-  background: linear-gradient(to right, #60a5fa, #f8fafc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.vista-card {
+  background-color: #383838;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
-.btn-primary {
-  @apply inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded transition-colors duration-300 uppercase tracking-widest text-sm;
+.vista-card:hover {
+  background-color: #484d47;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-.btn-secondary {
-  @apply inline-block px-8 py-3 bg-transparent border border-gray-600 hover:border-white text-white font-medium rounded transition-colors duration-300 uppercase tracking-widest text-sm;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #000000;
-}
-::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+.vista-gradient-bg {
+  background: radial-gradient(circle at center, #151d26 0%, #050505 100%);
 }

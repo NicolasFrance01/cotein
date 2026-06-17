@@ -1,22 +1,22 @@
-import { Inter } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const lora = Lora({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata = {
-  title: "COTEIN LTDA | Cooperativa de Servicios Técnicos y Telecomunicaciones",
-  description: "Servicio técnico y mantenimiento de equipos de telecomunicaciones e informática limitada. Conectando y manteniendo el futuro.",
-  keywords: ["cotein", "cooperativa", "telecomunicaciones", "informática", "servicio técnico", "mantenimiento"],
+  title: "VISTA.IO | Análisis de Datos",
+  description: "Usa los datos para obtener una vista de 360 grados de tu negocio",
 };
 
 import Navbar from "../components/Navbar";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className={`${inter.variable}`} style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <html lang="es" className={`${inter.variable} ${lora.variable}`}>
+      <body className="bg-[#050505] font-sans text-[#f4f4f4] flex flex-col min-h-screen antialiased selection:bg-[#ff6044]/30">
         <Navbar />
-        <main style={{ flex: "1" }}>{children}</main>
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
