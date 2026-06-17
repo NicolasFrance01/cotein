@@ -1,21 +1,23 @@
 :root {
-  --bg-color: #060b14;
-  --bg-secondary: #0f192b;
-  --bg-tertiary: #172642;
-  --text-primary: #f0f4f8;
-  --text-secondary: #a0aec0;
+  --bg-color: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
   
-  --accent-cyan: #00e5ff;
-  --accent-blue: #0055ff;
-  --accent-cyan-hover: #33eeff;
+  --accent-cyan: #ffffff;
+  --accent-blue: #27272a;
+  --accent-cyan-hover: #e4e4e7;
   
-  --gradient-rainbow: linear-gradient(90deg, #ff0055, #ffcc00, #00e5ff, #0055ff);
-  --gradient-blue: linear-gradient(135deg, #0055ff, #00e5ff);
+  --gradient-rainbow: none;
+  --gradient-blue: none;
+  
+  --border-color: #27272a;
   
   --font-family: var(--font-inter), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  --border-radius: 12px;
-  --transition-speed: 0.3s;
+  --border-radius: 4px;
+  --transition-speed: 0.2s;
 }
 
 * {
@@ -54,57 +56,60 @@ button {
 }
 
 .text-gradient {
-  background: var(--gradient-blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .text-gradient-rainbow {
-  background: var(--gradient-rainbow);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .glass-panel {
-  background: rgba(15, 25, 43, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+  transition: border-color var(--transition-speed) ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--text-secondary);
 }
 
 .btn-primary {
-  background: var(--gradient-blue);
-  color: #fff;
+  background: var(--text-primary);
+  color: var(--bg-color);
   padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background var(--transition-speed) ease;
+  box-shadow: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+  background: var(--accent-cyan-hover);
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--accent-cyan);
+  border: 1px solid var(--border-color);
   padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: all var(--transition-speed) ease;
 }
 
 .btn-secondary:hover {
-  background: var(--accent-cyan);
-  color: var(--bg-color);
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
 }
 
 .section {
@@ -116,11 +121,12 @@ button {
   font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
+  letter-spacing: -0.02em;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -138,13 +144,16 @@ button {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .form-input, .form-textarea {
   width: 100%;
   padding: 1rem;
   background-color: var(--bg-tertiary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   color: var(--text-primary);
   font-family: var(--font-family);
@@ -152,7 +161,7 @@ button {
 }
 
 .form-input:focus, .form-textarea:focus {
-  border-color: var(--accent-cyan);
+  border-color: var(--text-primary);
   outline: none;
 }
 
@@ -168,7 +177,7 @@ button {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-blue);
+  background: var(--border-color);
 }
 
 /* Media Queries */

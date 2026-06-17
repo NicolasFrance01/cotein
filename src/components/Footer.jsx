@@ -1,9 +1,11 @@
+import { MapPin, Phone, Mail } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "var(--bg-secondary)", padding: "4rem 0 2rem 0", marginTop: "auto" }}>
+    <footer style={{ backgroundColor: "var(--bg-secondary)", borderTop: "1px solid var(--border-color)", padding: "4rem 0 2rem 0", marginTop: "auto" }}>
       <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
         <div>
-          <h3 className="text-gradient-rainbow" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>CO.TE.IN.</h3>
+          <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem", fontWeight: 800, letterSpacing: "2px" }}>CO.TE.IN.</h3>
           <p style={{ color: "var(--text-secondary)", marginBottom: "1rem" }}>
             Cooperativa de Trabajo de Servicio Técnico y Mantenimiento de Equipos de Telecomunicaciones e Informática Limitada.
           </p>
@@ -22,9 +24,9 @@ export default function Footer() {
         
         <div>
           <h4 style={{ fontSize: "1.2rem", marginBottom: "1.5rem" }}>Contacto</h4>
-          <p style={{ color: "var(--text-secondary)", marginBottom: "0.5rem" }}>📍 [Dirección de la cooperativa]</p>
-          <p style={{ color: "var(--text-secondary)", marginBottom: "0.5rem" }}>📞 [Número de teléfono]</p>
-          <p style={{ color: "var(--text-secondary)" }}>✉️ [Correo electrónico]</p>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}><MapPin size={18} /> [Dirección de la cooperativa]</p>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}><Phone size={18} /> [Número de teléfono]</p>
+          <p style={{ color: "var(--text-secondary)", display: "flex", alignItems: "center", gap: "0.5rem" }}><Mail size={18} /> [Correo electrónico]</p>
         </div>
       </div>
       

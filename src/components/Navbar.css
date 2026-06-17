@@ -3,10 +3,8 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(6, 11, 20, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid var(--border-color);
   height: 80px;
   display: flex;
   align-items: center;
@@ -37,7 +35,7 @@
 }
 
 .navbar-links a:hover:not(.btn-primary) {
-  color: var(--accent-cyan);
+  color: var(--text-secondary);
 }
 
 .ml-4 {

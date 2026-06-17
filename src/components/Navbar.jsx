@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="container navbar-container">
-        <Link href="/" className="navbar-logo text-gradient-rainbow">
+        <Link href="/" className="navbar-logo">
           CO.TE.IN.
         </Link>
 

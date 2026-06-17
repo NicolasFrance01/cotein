@@ -1,5 +1,6 @@
 import ContactForm from "../../components/ContactForm";
 import Map from "../../components/Map";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata = {
   title: "Contacto | COTEIN LTDA",
@@ -10,7 +11,7 @@ export default function Contacto() {
   return (
     <div style={{ paddingTop: "120px", paddingBottom: "4rem" }}>
       <div className="container">
-        <h1 className="section-title text-gradient-rainbow animate-fade-in">Contacto</h1>
+        <h1 className="section-title animate-fade-in" style={{ letterSpacing: "-0.02em" }}>Contacto</h1>
         
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem" }}>
           <div>
@@ -25,21 +26,21 @@ export default function Contacto() {
             <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>Información de Contacto</h2>
             <div className="glass-panel" style={{ padding: "2rem", marginBottom: "2rem" }}>
               <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-                <span style={{ fontSize: "1.5rem" }}>📍</span>
+                <div style={{ color: "var(--text-primary)", display: "flex", alignItems: "center" }}><MapPin size={24} /></div>
                 <div>
                   <h4 style={{ fontWeight: 600 }}>Dirección</h4>
                   <p style={{ color: "var(--text-secondary)" }}>Buenos Aires, Argentina (Mat. 40271)</p>
                 </div>
               </div>
               <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-                <span style={{ fontSize: "1.5rem" }}>📞</span>
+                <div style={{ color: "var(--text-primary)", display: "flex", alignItems: "center" }}><Phone size={24} /></div>
                 <div>
                   <h4 style={{ fontWeight: 600 }}>Teléfono</h4>
                   <p style={{ color: "var(--text-secondary)" }}>+54 11 0000-0000</p>
                 </div>
               </div>
               <div style={{ display: "flex", gap: "1rem" }}>
-                <span style={{ fontSize: "1.5rem" }}>✉️</span>
+                <div style={{ color: "var(--text-primary)", display: "flex", alignItems: "center" }}><Mail size={24} /></div>
                 <div>
                   <h4 style={{ fontWeight: 600 }}>Correo</h4>
                   <p style={{ color: "var(--text-secondary)" }}>info@cotein.com.ar</p>
