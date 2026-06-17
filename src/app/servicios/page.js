@@ -1,4 +1,5 @@
 import { Monitor, Network, PhoneCall, Video, Wrench, BarChart } from "lucide-react";
+import AnimatedSection from "../../components/AnimatedSection";
 
 export const metadata = {
   title: "Nuestros Servicios | COTEIN LTDA",
@@ -42,18 +43,22 @@ export default function Servicios() {
   return (
     <div style={{ paddingTop: "120px", paddingBottom: "4rem" }}>
       <div className="container">
-        <h1 className="section-title animate-fade-in" style={{ letterSpacing: "-0.02em" }}>Nuestros Servicios</h1>
-        <p style={{ textAlign: "center", color: "var(--text-secondary)", maxWidth: "800px", margin: "0 auto 4rem auto", fontSize: "1.1rem" }}>
-          Brindamos soluciones integrales adaptadas a las necesidades tecnológicas de empresas, instituciones y particulares, garantizando el mejor desempeño de sus equipos.
-        </p>
+        <AnimatedSection delay={0.1}>
+          <h1 className="section-title" style={{ letterSpacing: "-0.02em" }}>Nuestros Servicios</h1>
+          <p style={{ textAlign: "center", color: "var(--text-secondary)", maxWidth: "800px", margin: "0 auto 4rem auto", fontSize: "1.1rem" }}>
+            Brindamos soluciones integrales adaptadas a las necesidades tecnológicas de empresas, instituciones y particulares, garantizando el mejor desempeño de sus equipos.
+          </p>
+        </AnimatedSection>
         
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "2rem" }}>
           {servicios.map((s, index) => (
-            <div key={index} className="glass-panel" style={{ padding: "2.5rem", transition: "transform 0.3s" }}>
+            <AnimatedSection key={index} delay={0.1 * index}>
+              <div className="glass-panel" style={{ padding: "2.5rem", height: "100%" }}>
               <div style={{ color: "var(--text-primary)", marginBottom: "1.5rem" }}>{s.icon}</div>
               <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem", color: "var(--text-primary)", fontWeight: 600 }}>{s.title}</h3>
               <p style={{ color: "var(--text-secondary)", lineHeight: "1.7" }}>{s.desc}</p>
-            </div>
+              </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

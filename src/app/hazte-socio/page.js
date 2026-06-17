@@ -1,4 +1,5 @@
 import MemberForm from "../../components/MemberForm";
+import AnimatedSection from "../../components/AnimatedSection";
 
 export const metadata = {
   title: "Hazte Socio | COTEIN LTDA",
@@ -9,10 +10,13 @@ export default function HazteSocio() {
   return (
     <div style={{ paddingTop: "120px", paddingBottom: "4rem" }}>
       <div className="container">
-        <h1 className="section-title animate-fade-in" style={{ letterSpacing: "-0.02em" }}>Hazte Socio</h1>
+        <AnimatedSection>
+          <h1 className="section-title" style={{ letterSpacing: "-0.02em" }}>Hazte Socio</h1>
+        </AnimatedSection>
         
         <div style={{ display: "grid", gridTemplateColumns: "1fr lg:2fr", gap: "3rem" }}>
-          <div>
+          <AnimatedSection delay={0.1}>
+            <div>
             <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>Beneficios de unirte a COTEIN</h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               <div className="glass-panel" style={{ padding: "1.5rem" }}>
@@ -29,7 +33,9 @@ export default function HazteSocio() {
               </div>
             </div>
           </div>
+          </AnimatedSection>
           
+          <AnimatedSection delay={0.2}>
           <div>
             <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>Formulario de Solicitud</h2>
             <p style={{ color: "var(--text-secondary)", marginBottom: "2rem" }}>
@@ -37,6 +43,7 @@ export default function HazteSocio() {
             </p>
             <MemberForm />
           </div>
+          </AnimatedSection>
         </div>
       </div>
     </div>

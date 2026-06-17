@@ -1,6 +1,7 @@
 import ContactForm from "../../components/ContactForm";
 import Map from "../../components/Map";
 import { MapPin, Phone, Mail } from "lucide-react";
+import AnimatedSection from "../../components/AnimatedSection";
 
 export const metadata = {
   title: "Contacto | COTEIN LTDA",
@@ -11,17 +12,22 @@ export default function Contacto() {
   return (
     <div style={{ paddingTop: "120px", paddingBottom: "4rem" }}>
       <div className="container">
-        <h1 className="section-title animate-fade-in" style={{ letterSpacing: "-0.02em" }}>Contacto</h1>
+        <AnimatedSection>
+          <h1 className="section-title" style={{ letterSpacing: "-0.02em" }}>Contacto</h1>
+        </AnimatedSection>
         
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem" }}>
-          <div>
+          <AnimatedSection delay={0.1}>
+            <div>
             <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>Envíanos tu consulta</h2>
             <p style={{ color: "var(--text-secondary)", marginBottom: "2rem" }}>
               Completa el formulario y nuestro equipo de soporte te responderá a la brevedad posible.
             </p>
             <ContactForm />
           </div>
+          </AnimatedSection>
           
+          <AnimatedSection delay={0.2}>
           <div>
             <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>Información de Contacto</h2>
             <div className="glass-panel" style={{ padding: "2rem", marginBottom: "2rem" }}>
@@ -51,6 +57,7 @@ export default function Contacto() {
             <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem" }}>Nuestra Ubicación</h3>
             <Map />
           </div>
+          </AnimatedSection>
         </div>
       </div>
     </div>

@@ -11,11 +11,13 @@ export const metadata = {
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import BackgroundGlow from "../components/BackgroundGlow";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`${inter.variable}`} style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <BackgroundGlow />
         <Navbar />
         <main style={{ flex: "1" }}>{children}</main>
         <Footer />
